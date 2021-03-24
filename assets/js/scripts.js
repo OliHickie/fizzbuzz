@@ -5,9 +5,10 @@ function levelSelector() {
         var element = document.querySelector('#level-section');
         var pElem = document.createElement('p');
         pElem.className = 'level-button';
+        
 
         element.appendChild(pElem);
-        pElem.append(level)
+        pElem.append(level.toUpperCase())
     })
-
 }
+

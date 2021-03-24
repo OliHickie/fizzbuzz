@@ -8,5 +8,23 @@ body {
 h1  {
     font-family: 'Train One', cursive;
     font-size: 72px;
-    margin: 60px;
+    margin: 60px 0px;
+}
+
+/* Level Selectors  */
+
+.level-button {
+    display: inline;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 28px;
+    background-color: #808080;
+}
+
+@media screen and (max-width: 600px) {
+  .level-button {
+      display: block;
+  }
 }
