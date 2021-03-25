@@ -17,11 +17,17 @@ function levelSelector() {
 function displayLevels() {
     var downArrow = document.getElementById("downArrow")
 
+    function displayLevelOptions() {
+        $("#collapsable-menu").toggleClass("d-none");
+    }
+
     downArrow.addEventListener("click", function () {
         if (downArrow.classList.contains("rotate")) {
             downArrow.classList.remove('rotate');
+            displayLevelOptions()
         } else {
             downArrow.classList.add("rotate")
+            displayLevelOptions()
         }
     })
 }

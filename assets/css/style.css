@@ -36,7 +36,7 @@ h2 {
 }
 
 .fa-chevron-circle-down {
-    margin: 5px;
+    margin: 10px;
     transition: 1s;
 }
 
@@ -63,10 +63,6 @@ h2 {
     opacity: 0.5;
     cursor: pointer;
 }
-
-#collapsable-menu {
-      display: none;
-  }
 
 @media screen and (max-width: 600px) {
   .level-button {
