@@ -22,6 +22,8 @@ h1  {
     }
 }
 
+/* Header  */
+
 .title {
     background-color: #e0e0e0;
 }
@@ -35,6 +37,11 @@ h1  {
     font-weight: 800;
     font-size: 28px;
     color: #086c15;
+}
+
+.level-button:hover {
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

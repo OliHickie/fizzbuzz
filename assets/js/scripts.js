@@ -2,17 +2,18 @@ function levelSelector() {
     var levels = ["easy", "medium", "hard", "ferocious"]
 
     levels.map(function (level) {
-        var element = document.querySelector('#level-section');
+        // add a <p> to #level-section element giving each one class of "level-button" and id of level name
+        var parentElement = document.querySelector('#level-section');
         var pElem = document.createElement('p');
         pElem.className = 'level-button';
-        
+        pElem.id = level;
 
-        element.appendChild(pElem);
+
+        parentElement.appendChild(pElem);
         pElem.append(level.toUpperCase())
     })
 }
 
-function onHover() {
-
-    
+window.onload = function () {
+   levelSelector()
 }
