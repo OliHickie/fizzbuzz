@@ -37,11 +37,15 @@ h2 {
 
 .fa-chevron-circle-down {
     margin: 10px;
-    transition: 1s;
+    transition: 0.75s;
 }
 
 .rotate {
     transform:rotate(180deg);
+}
+
+#collapsable-menu {
+    width: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -53,7 +57,6 @@ h2 {
 .level-button {
     display: inline;
     margin: 60px 30px;
-    border-radius: 25px;
     font-weight: 800;
     font-size: 28px;
     color: #086c15;
@@ -66,6 +69,6 @@ h2 {
 
 @media screen and (max-width: 600px) {
   .level-button {
-      display: block;
+      /* display: block; */
   }
 }

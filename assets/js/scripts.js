@@ -4,12 +4,13 @@ function levelSelector() {
     levels.map(function (level) {
         // add a <p> to #level-section element giving each one class of "level-button" and id of level name
         var parentElement = document.querySelector('#level-section');
+        var divElem = document.createElement('div')
         var pElem = document.createElement('p');
         pElem.className = 'level-button';
         pElem.id = level;
 
 
-        parentElement.appendChild(pElem);
+        parentElement.appendChild(divElem).appendChild(pElem);
         pElem.append(level.toUpperCase())
     })
 }
@@ -17,23 +18,20 @@ function levelSelector() {
 function displayLevels() {
     var downArrow = document.getElementById("downArrow")
 
-    function displayLevelOptions() {
-        $("#collapsable-menu").toggleClass("d-none");
-    }
-
     downArrow.addEventListener("click", function () {
         if (downArrow.classList.contains("rotate")) {
             downArrow.classList.remove('rotate');
-            displayLevelOptions()
+            $("#collapsable-menu").slideUp();
         } else {
             downArrow.classList.add("rotate")
-            displayLevelOptions()
+            $("#collapsable-menu").slideDown();
         }
     })
 }
 
 window.onload = function () {
 
+    $("#collapsable-menu").hide()
     displayLevels()
     levelSelector()
 }
