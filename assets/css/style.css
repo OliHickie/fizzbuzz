@@ -13,7 +13,10 @@ h1  {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-   
+}
+
+h2 {
+    font-size: 28px;
 }
 
 @media screen and (max-width: 600px) {
@@ -26,6 +29,23 @@ h1  {
 
 .title {
     background-color: #e0e0e0;
+}
+
+#menu-toggler {
+    color: #086c15;
+}
+
+.fa-chevron-circle-down {
+    margin: 5px;
+    transition: 1s;
+}
+
+.rotate {
+    transform:rotate(180deg);
+}
+
+@media screen and (max-width: 600px) {
+  
 }
 
 /* Level Selectors  */
@@ -44,12 +64,12 @@ h1  {
     cursor: pointer;
 }
 
+#collapsable-menu {
+      display: none;
+  }
+
 @media screen and (max-width: 600px) {
   .level-button {
       display: block;
-  }
-
-  #collapsable-menu {
-      display: none;
   }
 }

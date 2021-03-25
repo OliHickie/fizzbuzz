@@ -14,6 +14,20 @@ function levelSelector() {
     })
 }
 
+function displayLevels() {
+    var downArrow = document.getElementById("downArrow")
+
+    downArrow.addEventListener("click", function () {
+        if (downArrow.classList.contains("rotate")) {
+            downArrow.classList.remove('rotate');
+        } else {
+            downArrow.classList.add("rotate")
+        }
+    })
+}
+
 window.onload = function () {
-   levelSelector()
+
+    displayLevels()
+    levelSelector()
 }
