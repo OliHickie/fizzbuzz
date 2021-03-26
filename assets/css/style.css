@@ -84,7 +84,7 @@ h2 {
     font-size: 18px;
     font-weight: 600;
     border: none;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 .play-button:hover {
@@ -96,4 +96,21 @@ h2 {
 .play-button:active {
     box-shadow: none;
     transform: translateY(0.1em);
+}
+
+/* Game Number  */
+
+.number-container {
+    width: 350px;
+    height: 350px;
+    background-color: #e0e0e0;
+    display: block;
+    margin: 45px auto;
+    border-radius: 50%;
+}
+
+#game-number {
+    font-size: 15em;
+    display: block;
+    height: 350px;
 }

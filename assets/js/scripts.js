@@ -29,9 +29,17 @@ function displayLevels() {
     })
 }
 
-window.onload = function () {
+function numberDisplay() {
+    var numberWindow = document.querySelector("#game-number");
+
+    numberWindow.append(0);
+}
+
+document.addEventListener("DOMContentLoaded", function() {     
 
     $("#collapsable-menu").hide()
     displayLevels()
     levelSelector()
-}
+    numberDisplay()
+
+})
