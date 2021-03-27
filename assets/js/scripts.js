@@ -37,19 +37,21 @@ function numberDisplay() {
 
 function startPlay() {
     var startButton = document.querySelector('#start-btn');
-
-    startButton.addEventListener("click", function(){
+    startButton.addEventListener("click", function () {
         startButton.classList.add("d-none");
     })
 }
 
 function gameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
-    
+
+    document.querySelector('#gameplay-btns').innerHTML =
+    '<button class="gameplay" id=' + gameButtons[0] + '>' + gameButtons[0] + '</button><button class="gameplay" id=' + gameButtons[1] + '>' + gameButtons[1] + '</button><button class="gameplay" id=' + gameButtons[2] + '>' + gameButtons[2] + '</button><button class="gameplay" id=' + gameButtons[3] + '>' + gameButtons[3] + '</button>'
     
 }
 
-document.addEventListener("DOMContentLoaded", function() {     
+
+document.addEventListener("DOMContentLoaded", function () {
 
     $("#collapsable-menu").hide()
     displayLevels()
