@@ -35,11 +35,26 @@ function numberDisplay() {
     numberWindow.append(0);
 }
 
+function startPlay() {
+    var startButton = document.querySelector('#start-btn');
+
+    startButton.addEventListener("click", function(){
+        startButton.classList.add("d-none");
+    })
+}
+
+function gameButtons() {
+    var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
+    
+    
+}
+
 document.addEventListener("DOMContentLoaded", function() {     
 
     $("#collapsable-menu").hide()
     displayLevels()
     levelSelector()
     numberDisplay()
+    startPlay()
 
 })

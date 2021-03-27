@@ -74,9 +74,9 @@ h2 {
     height: 100vh;
 }
 
-.play-button {
+.play-btn {
     display: block;
-    margin: 200px auto;
+    margin: 150px auto;
     padding: 20px 30px;
     border-radius: 50px;
     background-color: #e0e0e0;
@@ -87,13 +87,13 @@ h2 {
     transition: 0.1s;
 }
 
-.play-button:hover {
+.play-btn:hover {
     -webkit-box-shadow: 0px 5px 5px -0.5px #202020; 
     box-shadow: 0px 5px 5px -0.5px #202020;   
     transform: translateY(-0.1em);
 }
 
-.play-button:active {
+.play-btn:active {
     box-shadow: none;
     transform: translateY(0.1em);
 }
