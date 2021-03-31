@@ -45,8 +45,12 @@ function startPlay() {
 function gameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
 
-    document.querySelector('#gameplay-btns').innerHTML =
-    '<button class="gameplay" id=' + gameButtons[0] + '>' + gameButtons[0] + '</button><button class="gameplay" id=' + gameButtons[1] + '>' + gameButtons[1] + '</button><button class="gameplay" id=' + gameButtons[2] + '>' + gameButtons[2] + '</button><button class="gameplay" id=' + gameButtons[3] + '>' + gameButtons[3] + '</button>'
+    for (let i = 0; i < gameButtons.length; i++){
+        document.querySelector('#gameplay-btns').innerHTML += 
+        '<button class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+    }
+    // document.querySelector('#gameplay-btns').innerHTML =
+    // '<div><button class="gameplay" id=' + gameButtons[0] + '>' + gameButtons[0] + '</button><button class="gameplay" id=' + gameButtons[1] + '>' + gameButtons[1] + '</button><button class="gameplay" id=' + gameButtons[2] + '>' + gameButtons[2] + '</button><button class="gameplay" id=' + gameButtons[3] + '>' + gameButtons[3] + '</button></div>'
     
 }
 
