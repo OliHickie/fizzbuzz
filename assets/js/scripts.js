@@ -29,36 +29,37 @@ function displayLevels() {
     })
 }
 
-function numberDisplay() {
-    // When the start-btn is clicked, random numbers will display for 3 secs 
+function numberRandomizer(time) {
     var numberWindow = document.querySelector("#game-number");
-    var startButton = document.querySelector('#start-btn');
 
-    numberWindow.append(0);
-
-    // On clicking start-btn, random numbers are displayed every 50 millisecond 
-    startButton.addEventListener("click", function () {
-        startButton.classList.add("d-none");
-
+        // On clicking start-btn, random numbers are displayed every 50 millisecond 
         var displayRandomNumbers = setInterval(() => {
             numberWindow.innerHTML = ""
             numberWindow.innerHTML = Math.floor((Math.random() * 99) + 1);
         }, 50)
 
-        // After 3000 ms random numbers stop changing
+        // After 'time' ms random numbers stop changing
         setTimeout(function () {
             clearInterval(displayRandomNumbers);
-        }, 3000);
+        }, time);
+}
+
+function startButton() {
+    // When the start-btn is clicked, random numbers will display for 3 secs 
+    
+    var startButton = document.querySelector('#start-btn');
+
+    document.querySelector("#game-number").append(0);
+
+    
+    startButton.addEventListener("click", function () {
+        // start-btn is hidden 
+        startButton.classList.add("d-none");
+
+        numberRandomizer(3000)
     })
 }
 
-// function startPlay() {
-//     // When start-btn clicked, it disappears
-//     var startButton = document.querySelector('#start-btn');
-//     startButton.addEventListener("click", function () {
-//         startButton.classList.add("d-none");
-//     })
-// }
 
 function gameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
@@ -76,6 +77,5 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#collapsable-menu").hide()
     displayLevels()
     levelSelector()
-    numberDisplay()
-    startPlay()
+    startButton()
 })
