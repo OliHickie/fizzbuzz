@@ -33,9 +33,20 @@ function numberDisplay() {
     var numberWindow = document.querySelector("#game-number");
 
     numberWindow.append(0);
+
+    document.querySelector('#start-btn').addEventListener("click", function () {
+        var displayRandomNumbers = setInterval(() => {
+            numberWindow.innerHTML = ""
+            numberWindow.innerHTML = Math.floor((Math.random() * 99) + 1);
+        }, 50)
+        setTimeout(function () {
+            clearInterval(displayRandomNumbers);
+        }, 3000);
+    })
 }
 
 function startPlay() {
+    // When start-btn clicked, it disappears
     var startButton = document.querySelector('#start-btn');
     startButton.addEventListener("click", function () {
         startButton.classList.add("d-none");
@@ -45,13 +56,11 @@ function startPlay() {
 function gameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
 
-    for (let i = 0; i < gameButtons.length; i++){
-        document.querySelector('#gameplay-btns').innerHTML += 
-        '<button class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+    // Create game buttons when start-btn clicked
+    for (let i = 0; i < gameButtons.length; i++) {
+        document.querySelector('#gameplay-btns').innerHTML +=
+            '<button class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
     }
-    // document.querySelector('#gameplay-btns').innerHTML =
-    // '<div><button class="gameplay" id=' + gameButtons[0] + '>' + gameButtons[0] + '</button><button class="gameplay" id=' + gameButtons[1] + '>' + gameButtons[1] + '</button><button class="gameplay" id=' + gameButtons[2] + '>' + gameButtons[2] + '</button><button class="gameplay" id=' + gameButtons[3] + '>' + gameButtons[3] + '</button></div>'
-    
 }
 
 
@@ -62,5 +71,4 @@ document.addEventListener("DOMContentLoaded", function () {
     levelSelector()
     numberDisplay()
     startPlay()
-
 })
