@@ -15,7 +15,7 @@ function levelSelector() {
     })
 }
 
-function displayLevels() {
+function displayLevelOptions() {
     var downArrow = document.getElementById("downArrow")
 
     downArrow.addEventListener("click", function () {
@@ -42,6 +42,8 @@ function numberRandomizer(time) {
         setTimeout(function () {
             clearInterval(displayRandomNumbers);
         }, time);
+
+        
 }
 
 function startButton() {
@@ -61,21 +63,29 @@ function startButton() {
 }
 
 
-function gameButtons() {
+function createGameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
 
     // Create game buttons when start-btn clicked
     for (let i = 0; i < gameButtons.length; i++) {
         document.querySelector('#gameplay-btns').innerHTML +=
-            '<button class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+            '<button onclick="gamePlay()" class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
     }
+}
+
+function gamePlay() {
+    var number = document.querySelector("#game-number").innerHTML;
+    console.log(number)
+    numberRandomizer(500)
+    
 }
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
     $("#collapsable-menu").hide()
-    displayLevels()
+    displayLevelOptions()
     levelSelector()
     startButton()
+    
 })
