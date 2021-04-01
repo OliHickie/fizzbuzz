@@ -30,28 +30,35 @@ function displayLevels() {
 }
 
 function numberDisplay() {
+    // When the start-btn is clicked, random numbers will display for 3 secs 
     var numberWindow = document.querySelector("#game-number");
+    var startButton = document.querySelector('#start-btn');
 
     numberWindow.append(0);
 
-    document.querySelector('#start-btn').addEventListener("click", function () {
+    // On clicking start-btn, random numbers are displayed every 50 millisecond 
+    startButton.addEventListener("click", function () {
+        startButton.classList.add("d-none");
+
         var displayRandomNumbers = setInterval(() => {
             numberWindow.innerHTML = ""
             numberWindow.innerHTML = Math.floor((Math.random() * 99) + 1);
         }, 50)
+
+        // After 3000 ms random numbers stop changing
         setTimeout(function () {
             clearInterval(displayRandomNumbers);
         }, 3000);
     })
 }
 
-function startPlay() {
-    // When start-btn clicked, it disappears
-    var startButton = document.querySelector('#start-btn');
-    startButton.addEventListener("click", function () {
-        startButton.classList.add("d-none");
-    })
-}
+// function startPlay() {
+//     // When start-btn clicked, it disappears
+//     var startButton = document.querySelector('#start-btn');
+//     startButton.addEventListener("click", function () {
+//         startButton.classList.add("d-none");
+//     })
+// }
 
 function gameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
