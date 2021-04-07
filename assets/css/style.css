@@ -54,10 +54,6 @@ h2 {
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-  
-}
-
 /* Level Selectors  */
 
 .level-button {
@@ -128,11 +124,19 @@ h2 {
     display: block;
     margin: 0 auto;
     height: 45px;
-    /* padding: 20px 30px; */
     border-radius: 50px;
     background-color: #e0e0e0;
     background: -webkit-linear-gradient(#FA9F42, #721817);
     font-size: 18px;
     font-weight: 600;
     border: none;
+}
+
+@media screen and (max-width: 600px) {
+    .gameplay {
+    margin: 10px 0px;
+    }
+    #gameplay-btns {
+    margin: 0px;
+}
 }
