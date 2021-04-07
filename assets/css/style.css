@@ -119,8 +119,20 @@ h2 {
     height: 350px;
 }
 
+#gameplay-btns {
+    margin: 0px 120px;
+}
+
 .gameplay {
     width: 100%;
     display: block;
     margin: 0 auto;
+    height: 45px;
+    /* padding: 20px 30px; */
+    border-radius: 50px;
+    background-color: #e0e0e0;
+    background: -webkit-linear-gradient(#FA9F42, #721817);
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
 }
