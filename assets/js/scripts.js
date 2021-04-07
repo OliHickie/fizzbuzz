@@ -48,20 +48,17 @@ function numberRandomizer(time) {
 
 function startButton() {
     // When the start-btn is clicked, random numbers will display for 3 secs 
-    
     var startButton = document.querySelector('#start-btn');
 
     document.querySelector("#game-number").append(0);
 
-    
     startButton.addEventListener("click", function () {
         // start-btn is hidden 
         startButton.classList.add("d-none");
 
-        numberRandomizer(3000)
+        numberRandomizer(1500)
     })
 }
-
 
 function createGameButtons() {
     var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
@@ -69,15 +66,15 @@ function createGameButtons() {
     // Create game buttons when start-btn clicked
     for (let i = 0; i < gameButtons.length; i++) {
         document.querySelector('#gameplay-btns').innerHTML +=
-            '<button onclick="gamePlay()" class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+            '<div class="col-3 btn-container"><button onclick="gamePlay()" class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
     }
 }
 
 function gamePlay() {
     var number = document.querySelector("#game-number").innerHTML;
+
     console.log(number)
     numberRandomizer(500)
-    
 }
 
 
