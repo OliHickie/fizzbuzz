@@ -31,17 +31,27 @@ function displayLevelOptions() {
 
 function numberRandomizer(time) {
     var numberWindow = document.querySelector("#game-number");
+    // var gameplayButtons = document.querySelectorAll('.gameplay')
+    var gameplayButtons = document.getElementsByClassName('gameplay')
 
-        // On clicking start-btn, random numbers are displayed every 50 millisecond 
-        var displayRandomNumbers = setInterval(() => {
-            numberWindow.innerHTML = ""
-            numberWindow.innerHTML = Math.floor((Math.random() * 99) + 1);
-        }, 50)
+    // disable gameplay buttons when number are changing
+    for(let i=0; i < gameplayButtons.length; i++){
+        gameplayButtons[i].disabled = true
+    }
 
-        // After 'time' ms random numbers stop changing
-        setTimeout(function () {
-            clearInterval(displayRandomNumbers);
-        }, time);
+    // On clicking start-btn, random numbers are displayed every 50 millisecond 
+    var displayRandomNumbers = setInterval(() => {
+        numberWindow.innerHTML = Math.floor((Math.random() * 10) + 1);
+    }, 50)
+
+    // After 'time' ms random numbers stop changing
+    setTimeout(function () {
+        // enable buttons when number displayed
+        for(let i=0; i < gameplayButtons.length; i++){
+            gameplayButtons[i].disabled = false
+        }
+        clearInterval(displayRandomNumbers);
+    }, time);
 
         
 }
@@ -49,6 +59,7 @@ function numberRandomizer(time) {
 function startButton() {
     // When the start-btn is clicked, random numbers will display for 3 secs 
     var startButton = document.querySelector('#start-btn');
+    
 
     document.querySelector("#game-number").append(0);
 
