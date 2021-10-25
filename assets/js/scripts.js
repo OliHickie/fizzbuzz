@@ -1,18 +1,42 @@
+var levelPicker = 10;
+
 function levelSelector() {
     var levels = ["easy", "medium", "hard", "ferocious"]
-
+    
     levels.map(function (level) {
-        // add a <p> to #level-section element giving each one class of "level-button" and id of level name
         var parentElement = document.querySelector('#level-section');
         var divElem = document.createElement('div')
         var pElem = document.createElement('p');
+        // add a <p> to #level-section element giving each one class of "level-button" and id of level name
         pElem.className = 'level-button';
         pElem.id = level;
-
 
         parentElement.appendChild(divElem).appendChild(pElem);
         pElem.append(level.toUpperCase())
     })
+
+    // Change levelPicker var with level clicks
+    var easy = document.querySelector('#easy')
+    var medium = document.querySelector('#medium')
+    var hard = document.querySelector('#hard')
+    var ferocious = document.querySelector('#ferocious')
+
+    easy.addEventListener("click", function () {
+       levelPicker = 10;
+       console.log(levelPicker)
+    })
+    medium.addEventListener("click", function () {
+        levelPicker = 50
+        console.log(levelPicker)
+     })
+     hard.addEventListener("click", function () {
+        levelPicker = 100
+        console.log(levelPicker)
+     })
+     ferocious.addEventListener("click", function () {
+        levelPicker = 1000
+        console.log(levelPicker)
+     })
 }
 
 function displayLevelOptions() {
@@ -31,7 +55,6 @@ function displayLevelOptions() {
 
 function numberRandomizer(time) {
     var numberWindow = document.querySelector("#game-number");
-    // var gameplayButtons = document.querySelectorAll('.gameplay')
     var gameplayButtons = document.getElementsByClassName('gameplay')
 
     // disable gameplay buttons when number are changing
@@ -41,7 +64,7 @@ function numberRandomizer(time) {
 
     // On clicking start-btn, random numbers are displayed every 50 millisecond 
     var displayRandomNumbers = setInterval(() => {
-        numberWindow.innerHTML = Math.floor((Math.random() * 10) + 1);
+        numberWindow.innerHTML = Math.floor((Math.random() * levelPicker) + 1);
     }, 50)
 
     // After 'time' ms random numbers stop changing
@@ -59,14 +82,12 @@ function numberRandomizer(time) {
 function startButton() {
     // When the start-btn is clicked, random numbers will display for 3 secs 
     var startButton = document.querySelector('#start-btn');
-    
 
     document.querySelector("#game-number").append(0);
 
     startButton.addEventListener("click", function () {
         // start-btn is hidden 
         startButton.classList.add("d-none");
-
         numberRandomizer(1500)
     })
 }
