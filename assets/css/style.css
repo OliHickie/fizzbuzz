@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 
 body {
@@ -71,7 +72,7 @@ h2 {
 /* Game Area  */
 
 .game-area {
-    height: 100vh;
+    height: 100%;
 }
 
 .play-btn {
@@ -138,7 +139,18 @@ h2 {
 }
 
 /* Countdown Timer */
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #countdown-timer {
-    
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    color: #FA9F42;
+}
+
+.fa-stopwatch {
+    display: block;
 }

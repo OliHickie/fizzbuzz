@@ -107,7 +107,7 @@ function countdownTimer() {
         if(time <= 0){
         clearInterval(timer);
         }
-        document.getElementById('countdown-timer').innerHTML = time;
+        document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
         time -= 1;
     }, 1000);
 }
