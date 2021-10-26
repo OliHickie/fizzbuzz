@@ -1,39 +1,39 @@
-var levelPicker = 10;
+var levelPicker = 20;
 
-function levelSelector() {
-    var levels = ["easy", "medium", "hard", "ferocious"]
+// function levelSelector() {
+//     var levels = ["easy", "medium", "hard", "ferocious"]
     
-    levels.map(function (level) {
-        var parentElement = document.querySelector('#level-section');
-        var divElem = document.createElement('div')
-        var pElem = document.createElement('p');
-        // add a <p> to #level-section element giving each one class of "level-button" and id of level name
-        pElem.className = 'level-button';
-        pElem.id = level;
+//     levels.map(function (level) {
+//         var parentElement = document.querySelector('#level-section');
+//         var divElem = document.createElement('div')
+//         var pElem = document.createElement('p');
+//         // add a <p> to #level-section element giving each one class of "level-button" and id of level name
+//         pElem.className = 'level-button';
+//         pElem.id = level;
 
-        parentElement.appendChild(divElem).appendChild(pElem);
-        pElem.append(level.toUpperCase())
-    })
+//         parentElement.appendChild(divElem).appendChild(pElem);
+//         pElem.append(level.toUpperCase())
+//     })
 
-    // Change levelPicker var with level clicks
-    var easy = document.querySelector('#easy')
-    var medium = document.querySelector('#medium')
-    var hard = document.querySelector('#hard')
-    var ferocious = document.querySelector('#ferocious')
+//     // Change levelPicker var with level clicks
+//     var easy = document.querySelector('#easy')
+//     var medium = document.querySelector('#medium')
+//     var hard = document.querySelector('#hard')
+//     var ferocious = document.querySelector('#ferocious')
 
-    easy.addEventListener("click", function() {
-       levelPicker = 20;
-    })
-    medium.addEventListener("click", function() {
-        levelPicker = 50
-     })
-     hard.addEventListener("click", function() {
-        levelPicker = 100
-     })
-     ferocious.addEventListener("click", function() {
-        levelPicker = 1000
-     })
-}
+//     easy.addEventListener("click", function() {
+//         levelPicker = 20;
+//     })
+//     medium.addEventListener("click", function() {
+//         levelPicker = 50
+//      })
+//      hard.addEventListener("click", function() {
+//         levelPicker = 100
+//      })
+//      ferocious.addEventListener("click", function() {
+//         levelPicker = 1000
+//      })
+// }
 
 function displayLevelOptions() {
     var downArrow = document.getElementById("downArrow");
@@ -49,14 +49,28 @@ function displayLevelOptions() {
     })
 }
 
-function numberRandomizer(time) {
-    var numberWindow = document.querySelector("#game-number");
+function disableButtons() {
     var gameplayButtons = document.getElementsByClassName('gameplay')
-
+    
     // disable gameplay buttons when number are changing
     for(let i=0; i < gameplayButtons.length; i++){
         gameplayButtons[i].disabled = true
     }
+}
+
+function enableButtons() {
+    var gameplayButtons = document.getElementsByClassName('gameplay')
+
+    // enable buttons when number displayed
+    for(let i=0; i < gameplayButtons.length; i++){
+        gameplayButtons[i].disabled = false
+    }
+}
+
+function numberRandomizer(time) {
+    var numberWindow = document.querySelector("#game-number");
+    
+    disableButtons()
 
     // On clicking start-btn, random numbers are displayed every 50 millisecond 
     var displayRandomNumbers = setInterval(() => {
@@ -65,10 +79,7 @@ function numberRandomizer(time) {
 
     // After 'time' ms random numbers stop changing
     setTimeout(function () {
-        // enable buttons when number displayed
-        for(let i=0; i < gameplayButtons.length; i++){
-            gameplayButtons[i].disabled = false
-        }
+        enableButtons()
         clearInterval(displayRandomNumbers);
     }, time);
 
@@ -95,19 +106,25 @@ function createGameButtons() {
     // Create game buttons when start-btn clicked
     for (let i = 0; i < gameButtons.length; i++) {
         document.querySelector('#gameplay-btns').innerHTML +=
-            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay()" class="gameplay" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay()" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
     }
 }
 
 function countdownTimer() {
-    var time = 30;
+    var time = 10;
+
+    document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
 
     // Create countdown timer 
     var timer = setInterval(function(){
-        if(time <= 0){
+        if (time <= 0) {
         clearInterval(timer);
         }
         document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
+        if (time == 0) {
+            disableButtons()
+            // return document.location.href = "http://www.google.com";
+        }
         time -= 1;
     }, 1000);
 }
@@ -121,6 +138,6 @@ function gamePlay() {
 document.addEventListener("DOMContentLoaded", function () {
     $("#collapsable-menu").hide()
     displayLevelOptions()
-    levelSelector()
+    // levelSelector()
     startButton()
 })

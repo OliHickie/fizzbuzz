@@ -16,9 +16,30 @@
 <body>
     <header class="text-center title">
         <h1>FizzBuzz</h1>
+        <h2 id="menu-toggler">Choose a skill level<i class="fas fa-chevron-circle-down" id="downArrow"></i></h2>
+        <nav id="collapsable-menu">
+            <div id="level-section"></div>
+        </nav>
     </header>
 
+    <section>
+        <div class="game-area">
+            <button class="play-btn d-none">CLICK TO PLAY</button>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="text-center number-container rounded col-12 col-lg-4" id="game-number"></div>
+                <div class="col-12 col-lg-4 timer-container">
+                    <p class="text-center" id="countdown-timer"></p>
+                </div>
+            </div>
 
+            <div class="">
+                <button class="play-btn" id="start-btn" onclick="createGameButtons()">START</button>
+            </div>
+            <div class="row" id="gameplay-btns">
+            </div>
+        </div>
+    </section>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
