@@ -101,17 +101,13 @@ h2 {
 /* Game Number  */
 
 .number-container {
-    width: 350px;
     height: 350px;
     background-color: #e0e0e0;
-    display: block;
-    margin: 45px auto;
-    border-radius: 50%;
+    margin: 45px 0px;
 }
 
 #game-number {
     font-size: 15em;
-    display: block;
     height: 350px;
 }
 
@@ -139,4 +135,10 @@ h2 {
     #gameplay-btns {
     margin: 0px;
     }
+}
+
+/* Countdown Timer */
+
+#countdown-timer {
+    
 }

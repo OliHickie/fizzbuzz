@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,18 +25,20 @@
     <section>
         <div class="game-area">
             <button class="play-btn d-none">CLICK TO PLAY</button>
-            <div class="number-container">
-                <span class="text-center" id="game-number"></span>
-                <div class="">
-                    <button class="play-btn" id="start-btn" onclick="createGameButtons()">START</button>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="text-center number-container rounded col-12 col-lg-4" id="game-number"></div>
+                <div class="col-12 col-lg-4">
+                    <p class="text-center" id="countdown-timer"></p>
                 </div>
             </div>
 
+            <div class="">
+                <button class="play-btn" id="start-btn" onclick="createGameButtons()">START</button>
+            </div>
             <div class="row" id="gameplay-btns">
-
             </div>
         </div>
-
     </section>
 
 

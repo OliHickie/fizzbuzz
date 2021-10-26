@@ -21,26 +21,22 @@ function levelSelector() {
     var hard = document.querySelector('#hard')
     var ferocious = document.querySelector('#ferocious')
 
-    easy.addEventListener("click", function () {
-       levelPicker = 10;
-       console.log(levelPicker)
+    easy.addEventListener("click", function() {
+       levelPicker = 20;
     })
-    medium.addEventListener("click", function () {
+    medium.addEventListener("click", function() {
         levelPicker = 50
-        console.log(levelPicker)
      })
-     hard.addEventListener("click", function () {
+     hard.addEventListener("click", function() {
         levelPicker = 100
-        console.log(levelPicker)
      })
-     ferocious.addEventListener("click", function () {
+     ferocious.addEventListener("click", function() {
         levelPicker = 1000
-        console.log(levelPicker)
      })
 }
 
 function displayLevelOptions() {
-    var downArrow = document.getElementById("downArrow")
+    var downArrow = document.getElementById("downArrow");
 
     downArrow.addEventListener("click", function () {
         if (downArrow.classList.contains("rotate")) {
@@ -89,6 +85,7 @@ function startButton() {
         // start-btn is hidden 
         startButton.classList.add("d-none");
         numberRandomizer(1500)
+        countdownTimer()
     })
 }
 
@@ -102,19 +99,28 @@ function createGameButtons() {
     }
 }
 
+function countdownTimer() {
+    var time = 30;
+
+    // Create countdown timer 
+    var timer = setInterval(function(){
+        if(time <= 0){
+        clearInterval(timer);
+        }
+        document.getElementById('countdown-timer').innerHTML = time;
+        time -= 1;
+    }, 1000);
+}
+
 function gamePlay() {
     var number = document.querySelector("#game-number").innerHTML;
-
-    console.log(number)
     numberRandomizer(500)
 }
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
     $("#collapsable-menu").hide()
     displayLevelOptions()
     levelSelector()
     startButton()
-    
 })
