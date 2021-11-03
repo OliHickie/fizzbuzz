@@ -1,5 +1,5 @@
 function countdownTimer() {
-    var time = 10;
+    var time = 3;
 
     document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
 
@@ -10,13 +10,19 @@ function countdownTimer() {
         }
         document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
         if (time == 0) {
-            disableButtons()
-            setTimeout(function () {
-                var gameButtonX = document.getElementById("gameplay-btns")
-                gameButtonX.classList.add("d-none")
-            }, 500)
-
+            timerEnds()
         }
         time -= 1;
     }, 1000);
+}
+
+function timerEnds() {
+    var gameEndButtons = document.getElementById("end-game")
+
+    disableButtons()
+    setTimeout(function () {
+        var gameButton = document.getElementById("gameplay-btns")
+        gameButton.classList.add("d-none")
+        gameEndButtons.classList.remove('d-none')
+    }, 500)
 }

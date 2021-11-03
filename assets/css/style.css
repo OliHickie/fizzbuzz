@@ -12,18 +12,20 @@ body {
     margin: 0;
 }
 
-h1  {
+h1, h2, h3, h4 {
     font-family: 'Train One', cursive;
-    font-size: 72px;
-    padding: 60px 0px;
     background: -webkit-linear-gradient(#FA9F42, #721817);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+h1  {
+    font-size: 72px;
+}
+
 h2 {
-    font-size: 28px;
+    font-size: 48px;
 }
 
 @media screen and (max-width: 600px) {
@@ -97,6 +99,18 @@ h2 {
 .play-btn:active {
     box-shadow: none;
     transform: translateY(0.1em);
+}
+
+.btn-primary {
+    background-color: #e78422;
+}
+
+.btn-primary:hover {
+    background-color: #b1681f;
+}
+
+.btn {
+    border: none;
 }
 
 /* Game Number  */
