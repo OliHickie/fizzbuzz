@@ -35,18 +35,30 @@ var levelPicker = 20;
 //      })
 // }
 
-function displayLevelOptions() {
-    var downArrow = document.getElementById("downArrow");
+// function displayLevelOptions() {
+//     var downArrow = document.getElementById("downArrow");
 
-    downArrow.addEventListener("click", function () {
-        if (downArrow.classList.contains("rotate")) {
-            downArrow.classList.remove('rotate');
-            $("#collapsable-menu").slideUp();
-        } else {
-            downArrow.classList.add("rotate")
-            $("#collapsable-menu").slideDown();
-        }
-    })
+//     downArrow.addEventListener("click", function () {
+//         if (downArrow.classList.contains("rotate")) {
+//             downArrow.classList.remove('rotate');
+//             $("#collapsable-menu").slideUp();
+//         } else {
+//             downArrow.classList.add("rotate")
+//             $("#collapsable-menu").slideDown();
+//         }
+//     })
+// }
+
+// Buttons
+
+function createGameButtons() {
+    var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
+
+    // Create game buttons when start-btn clicked
+    for (let i = 0; i < gameButtons.length; i++) {
+        document.querySelector('#gameplay-btns').innerHTML +=
+            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay()" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+    }
 }
 
 function disableButtons() {
@@ -65,6 +77,20 @@ function enableButtons() {
     for(let i=0; i < gameplayButtons.length; i++){
         gameplayButtons[i].disabled = false
     }
+}
+
+function startButton() {
+    // When the start-btn is clicked, random numbers will display for 3 secs 
+    var startButton = document.querySelector('#start-btn');
+
+    document.querySelector("#game-number").append(0);
+
+    startButton.addEventListener("click", function () {
+        // start-btn is hidden 
+        startButton.classList.add("d-none");
+        numberRandomizer(1500)
+        countdownTimer()
+    })
 }
 
 function numberRandomizer(time) {
@@ -86,49 +112,6 @@ function numberRandomizer(time) {
         
 }
 
-function startButton() {
-    // When the start-btn is clicked, random numbers will display for 3 secs 
-    var startButton = document.querySelector('#start-btn');
-
-    document.querySelector("#game-number").append(0);
-
-    startButton.addEventListener("click", function () {
-        // start-btn is hidden 
-        startButton.classList.add("d-none");
-        numberRandomizer(1500)
-        countdownTimer()
-    })
-}
-
-function createGameButtons() {
-    var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
-
-    // Create game buttons when start-btn clicked
-    for (let i = 0; i < gameButtons.length; i++) {
-        document.querySelector('#gameplay-btns').innerHTML +=
-            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay()" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
-    }
-}
-
-function countdownTimer() {
-    var time = 10;
-
-    document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
-
-    // Create countdown timer 
-    var timer = setInterval(function(){
-        if (time <= 0) {
-        clearInterval(timer);
-        }
-        document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
-        if (time == 0) {
-            disableButtons()
-            // return document.location.href = "http://www.google.com";
-        }
-        time -= 1;
-    }, 1000);
-}
-
 function gamePlay() {
     var number = document.querySelector("#game-number").innerHTML;
     numberRandomizer(500)
@@ -136,8 +119,8 @@ function gamePlay() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    $("#collapsable-menu").hide()
-    displayLevelOptions()
+    // $("#collapsable-menu").hide()
+    // displayLevelOptions()
     // levelSelector()
     startButton()
 })
