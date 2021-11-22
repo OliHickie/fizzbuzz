@@ -1,53 +1,4 @@
-var levelPicker = 20;
-
-// function levelSelector() {
-//     var levels = ["easy", "medium", "hard", "ferocious"]
-    
-//     levels.map(function (level) {
-//         var parentElement = document.querySelector('#level-section');
-//         var divElem = document.createElement('div')
-//         var pElem = document.createElement('p');
-//         // add a <p> to #level-section element giving each one class of "level-button" and id of level name
-//         pElem.className = 'level-button';
-//         pElem.id = level;
-
-//         parentElement.appendChild(divElem).appendChild(pElem);
-//         pElem.append(level.toUpperCase())
-//     })
-
-//     // Change levelPicker var with level clicks
-//     var easy = document.querySelector('#easy')
-//     var medium = document.querySelector('#medium')
-//     var hard = document.querySelector('#hard')
-//     var ferocious = document.querySelector('#ferocious')
-
-//     easy.addEventListener("click", function() {
-//         levelPicker = 20;
-//     })
-//     medium.addEventListener("click", function() {
-//         levelPicker = 50
-//      })
-//      hard.addEventListener("click", function() {
-//         levelPicker = 100
-//      })
-//      ferocious.addEventListener("click", function() {
-//         levelPicker = 1000
-//      })
-// }
-
-// function displayLevelOptions() {
-//     var downArrow = document.getElementById("downArrow");
-
-//     downArrow.addEventListener("click", function () {
-//         if (downArrow.classList.contains("rotate")) {
-//             downArrow.classList.remove('rotate');
-//             $("#collapsable-menu").slideUp();
-//         } else {
-//             downArrow.classList.add("rotate")
-//             $("#collapsable-menu").slideDown();
-//         }
-//     })
-// }
+var levelPicker = 20; // Remove once levels sorted
 
 // Buttons
 
@@ -119,8 +70,5 @@ function gamePlay() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // $("#collapsable-menu").hide()
-    // displayLevelOptions()
-    // levelSelector()
     startButton()
 })
