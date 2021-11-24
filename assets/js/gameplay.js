@@ -65,16 +65,31 @@ function numberRandomizer(time) {
 
 function gamePlay(selected_id) {
     var number = document.querySelector("#game-number").innerHTML;
+
     numberRandomizer(500)
 
     var idNumber = selected_id.split('-')[1]
+    var idName = selected_id.split('-')[0]
 
-    console.log(idNumber)
+    console.log(number + idNumber)
 
-    if (selected_id == "fizz") {
-        console.log('hurruh')
-    } 
-
+    if (idName == 'none') {
+        if (number % 3 == 0 || number % 5 == 0) {
+            console.log('Error')
+        } else {
+            console.log('Hurruh')
+        }
+    } else if (idName == 'fizzbuzz') {
+        if (number % 3 == 0 && number % 5 == 0){
+            console.log("Hurruh")
+        } else {
+            console.log("error!")
+        }
+    } else if (number % idNumber == 0) {
+        console.log("Hurruh")
+    } else {
+        console.log('Error')
+    }
 }
 
 function fizzBuzz() {
