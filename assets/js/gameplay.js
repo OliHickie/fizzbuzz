@@ -1,4 +1,5 @@
 var levelPicker = 20; // Remove once levels sorted
+let counter = 0
 
 // Buttons
 
@@ -54,7 +55,7 @@ function numberRandomizer(time) {
         numberWindow.innerHTML = Math.floor((Math.random() * levelPicker) + 1);
     }, 50)
 
-    // After 'time' ms random numbers stop changing
+    // After 'time' random numbers stop changing
     setTimeout(function () {
         enableButtons()
         clearInterval(displayRandomNumbers);
@@ -65,9 +66,6 @@ function numberRandomizer(time) {
 
 function gamePlay(selected_id) {
     var number = document.querySelector("#game-number").innerHTML;
-
-    numberRandomizer(500)
-
     var idNumber = selected_id.split('-')[1]
     var idName = selected_id.split('-')[0]
 
@@ -77,25 +75,34 @@ function gamePlay(selected_id) {
         if (number % 3 == 0 || number % 5 == 0) {
             console.log('Error')
         } else {
-            console.log('Hurruh')
+            correctAnswer()
         }
     } else if (idName == 'fizzbuzz') {
         if (number % 3 == 0 && number % 5 == 0){
-            console.log("Hurruh")
+            correctAnswer()
         } else {
             console.log("error!")
         }
-    } else if (number % idNumber == 0) {
-        console.log("Hurruh")
+    } else if (number % idNumber == 0 && number != 15) {
+        correctAnswer()
     } else {
         console.log('Error')
     }
 }
 
-function fizzBuzz() {
-    var gameButton = document.getElementById
+function correctAnswer() {
+    console.log("Hurruh")
+    counter++;
+    numberRandomizer(500);
 }
 
+// function incorrectAnswer() {
+//     console.log("Error!")
+//     setTimeout(function(){
+//         disableButtons;
+//         numberRandomizer(500);
+//     }, 2000);
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
     startButton()
