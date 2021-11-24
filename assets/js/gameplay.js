@@ -3,12 +3,12 @@ var levelPicker = 20; // Remove once levels sorted
 // Buttons
 
 function createGameButtons() {
-    var gameButtons = ["fizz", "buzz", "fizzbuzz", "none"]
+    var gameButtons = ["fizz-3", "buzz-5", "fizzbuzz-15", "none-0"]
 
     // Create game buttons when start-btn clicked
     for (let i = 0; i < gameButtons.length; i++) {
         document.querySelector('#gameplay-btns').innerHTML +=
-            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay()" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i] + '</button>'
+            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay(this.id)" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i].split("-")[0] + '</button>'
     }
 }
 
@@ -63,9 +63,22 @@ function numberRandomizer(time) {
         
 }
 
-function gamePlay() {
+function gamePlay(selected_id) {
     var number = document.querySelector("#game-number").innerHTML;
     numberRandomizer(500)
+
+    var idNumber = selected_id.split('-')[1]
+
+    console.log(idNumber)
+
+    if (selected_id == "fizz") {
+        console.log('hurruh')
+    } 
+
+}
+
+function fizzBuzz() {
+    var gameButton = document.getElementById
 }
 
 

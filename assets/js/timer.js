@@ -1,5 +1,5 @@
 function countdownTimer() {
-    var time = 3;
+    var time = 10;
 
     document.getElementById('countdown-timer').innerHTML = `<p><i class="fas fa-stopwatch"></i></p> <p>` + time + `</p>`;
 
