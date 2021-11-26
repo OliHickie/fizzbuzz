@@ -34,6 +34,7 @@ function enableButtons() {
 function startButton() {
     // When the start-btn is clicked, random numbers will display for 3 secs 
     var startButton = document.querySelector('.start-btn-container');
+    var gameplayButtons = document.getElementById("gameplay-btns");
 
     startButton.addEventListener("click", function () {
         // start-btn is hidden 
@@ -41,6 +42,7 @@ function startButton() {
         startButton.classList.add("d-none");
         numberRandomizer(1500)
         countdownTimer()
+        gameplayButtons.scrollIntoView(false);
     })
 }
 
