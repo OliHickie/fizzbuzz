@@ -57,20 +57,6 @@ h2 {
     width: 100%;
 }
 
-/* Level Selectors  */
-
-.level-button {
-    display: inline;
-    font-weight: 800;
-    font-size: 28px;
-    color: #086c15;
-}
-
-.level-button:hover {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
 /* Game Area  */
 
 .game-area {
@@ -153,6 +139,7 @@ h2 {
 }
 
 /* Countdown Timer */
+
 .timer-container {
     display: flex;
     align-items: center;
@@ -167,4 +154,18 @@ h2 {
 
 .fa-stopwatch {
     display: block;
+}
+
+/* buttons  */
+
+.btn-correct {
+    border: 1px solid #49fb35;
+    box-shadow: 0 5px 15px rgba(73, 251, 53, 0.4);
+    color: #49fb35;
+}
+
+.btn-incorrect {
+    border: 1px solid #b10012;
+    box-shadow: 0 5px 15px rgba(255, 149, 159, 0.4);
+    color: #b10012;
 }

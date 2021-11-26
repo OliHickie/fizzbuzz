@@ -1,4 +1,4 @@
-var levelPicker = 20; // Remove once levels sorted
+var levelPicker = 20; // Number range = 1-20 // Remove once levels sorted
 let counter = 0
 
 // Buttons
@@ -74,35 +74,50 @@ function gamePlay(selected_id) {
     if (idName == 'none') {
         if (number % 3 == 0 || number % 5 == 0) {
             console.log('Error')
+            incorrectAnswer(selected_id)
         } else {
-            correctAnswer()
+            correctAnswer(selected_id)
         }
     } else if (idName == 'fizzbuzz') {
         if (number % 3 == 0 && number % 5 == 0){
-            correctAnswer()
+            correctAnswer(selected_id)
         } else {
             console.log("error!")
+            incorrectAnswer(selected_id)
         }
     } else if (number % idNumber == 0 && number != 15) {
-        correctAnswer()
+        correctAnswer(selected_id)
     } else {
         console.log('Error')
+        incorrectAnswer(selected_id)
     }
 }
 
-function correctAnswer() {
+function correctAnswer(selected_id) {
+    // If answer is correct, light up green and add 1 to counter
+    var selectedButton = document.getElementById(selected_id)
+
     console.log("Hurruh")
+    selectedButton.classList.add('btn-correct')
     counter++;
+    setTimeout(function (){
+        selectedButton.classList.remove('btn-correct')
+    }, 500)
+    console.log(counter)
     numberRandomizer(500);
 }
 
-// function incorrectAnswer() {
-//     console.log("Error!")
-//     setTimeout(function(){
-//         disableButtons;
-//         numberRandomizer(500);
-//     }, 2000);
-// }
+function incorrectAnswer(selected_id) {
+    var selectedButton = document.getElementById(selected_id)
+
+    console.log("Error!")
+    selectedButton.classList.add('btn-incorrect');
+    disableButtons()
+    setTimeout(function (){
+        selectedButton.classList.remove('btn-incorrect');
+        enableButtons()
+    }, 3000)
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     startButton()
