@@ -23,21 +23,35 @@
             <button class="play-btn d-none">CLICK TO PLAY</button>
             <div class="row">
                 <div class="col-lg-4"></div>
-                <div class="text-center number-container rounded col-12 col-lg-4" id="game-number"></div>
-                <div class="col-12 col-lg-4 timer-container">
+
+                <div class="text-center number-container col-12 col-lg-4 order-2 order-lg-1 mb-5 mt-lg-5 d-none"
+                    id="game-number">
+                </div>
+                <!-- Timer  -->
+                <div class="col-12 col-lg-4 timer-container order-1 order-lg-2">
                     <p class="text-center" id="countdown-timer"></p>
                 </div>
             </div>
 
-            <div class="">
-                <button class="play-btn" id="start-btn" onclick="createGameButtons()">START</button>
+            <!-- Start Button -->
+            <div class="start-btn-container">
+                <button id="start-btn" onclick="createGameButtons()">START</button>
             </div>
-            <div class="row" id="gameplay-btns">
+
+            <!-- Game buttons  -->
+            <div class="row mx-auto" id="gameplay-btns">
             </div>
-            <div class="d-none text-center" id="end-game">
-                <h2 class="py-3">Game Over!</h2>
-                <a href="/play.html" class="btn btn-primary">Restart</a>
-                <a href="/" class="btn btn-secondary">Go Home</a>
+
+            <!-- Game ends -->
+            <div class="d-none text-center py-5" id="end-game">
+                <h2 class="py-5">Game Over!</h2>
+                <div class="">
+                    <p class="score-text">Congratulations! <br> You scored <span id="gameEndScore"></span></p>
+                    <div class="py-3">
+                        <a href="/play.html" class="btn btn-primary">Restart</a>
+                        <a href="/" class="btn btn-secondary">Go Home</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

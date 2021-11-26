@@ -17,12 +17,13 @@ function countdownTimer() {
 }
 
 function timerEnds() {
-    var gameEndButtons = document.getElementById("end-game")
 
     disableButtons()
     setTimeout(function () {
-        var gameButton = document.getElementById("gameplay-btns")
-        gameButton.classList.add("d-none")
-        gameEndButtons.classList.remove('d-none')
+        document.getElementById("gameplay-btns").classList.add("d-none")
+        document.getElementById("game-number").classList.add("d-none")
+        document.getElementById("end-game").classList.remove('d-none')
+        document.getElementById("countdown-timer").classList.add("d-none")
+        document.getElementById('gameEndScore').innerHTML = counter
     }, 500)
 }

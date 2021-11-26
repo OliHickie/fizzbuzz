@@ -63,9 +63,15 @@ h2 {
     height: 100%;
 }
 
-.play-btn {
-    display: block;
-    margin: 0 auto;
+.start-btn-container {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-btn {
+    /* margin: 0 auto; */
     padding: 20px 30px;
     border-radius: 50px;
     background-color: #e0e0e0;
@@ -74,6 +80,7 @@ h2 {
     font-weight: 600;
     border: none;
     transition: 0.1s;
+
 }
 
 .play-btn:hover {
@@ -104,7 +111,6 @@ h2 {
 .number-container {
     height: 350px;
     background-color: #e0e0e0;
-    margin: 45px 0px;
 }
 
 #game-number {
@@ -129,13 +135,18 @@ h2 {
     border: none;
 }
 
+#gameplay-btns {
+    max-width: 600px;
+    margin: 15px auto;
+}
+
 @media screen and (max-width: 600px) {
-    .gameplay {
+    /* .gameplay {
     margin: 10px 0px;
     }
     #gameplay-btns {
     margin: 0px;
-    }
+    } */
 }
 
 /* Countdown Timer */
@@ -168,4 +179,11 @@ h2 {
     border: 1px solid #b10012;
     box-shadow: 0 5px 15px rgba(255, 149, 159, 0.4);
     color: #b10012;
+}
+
+/* Post game */
+
+.score-text {
+    font-size: 2em;
+    color: #e0e0e0;
 }

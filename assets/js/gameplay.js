@@ -9,7 +9,7 @@ function createGameButtons() {
     // Create game buttons when start-btn clicked
     for (let i = 0; i < gameButtons.length; i++) {
         document.querySelector('#gameplay-btns').innerHTML +=
-            '<div class="col-6 col-sm-3 btn-container"><button onclick="gamePlay(this.id)" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i].split("-")[0] + '</button>'
+            '<div class="col-6 py-1 btn-container"><button onclick="gamePlay(this.id)" class="gameplay text-capitalize" id=' + gameButtons[i] + '>' + gameButtons[i].split("-")[0] + '</button>'
     }
 }
 
@@ -33,12 +33,11 @@ function enableButtons() {
 
 function startButton() {
     // When the start-btn is clicked, random numbers will display for 3 secs 
-    var startButton = document.querySelector('#start-btn');
-
-    document.querySelector("#game-number").append(0);
+    var startButton = document.querySelector('.start-btn-container');
 
     startButton.addEventListener("click", function () {
         // start-btn is hidden 
+        document.getElementById("game-number").classList.remove("d-none")
         startButton.classList.add("d-none");
         numberRandomizer(1500)
         countdownTimer()
