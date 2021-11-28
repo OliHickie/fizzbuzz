@@ -1,0 +1,15 @@
+.home-menu-items {
+    list-style-type: none;
+    font-size: 2em;
+    text-transform: none;
+}
+
+.home-menu-items li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa-hand-point-right, 
+.fa-hand-point-left {
+}
+
