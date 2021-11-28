@@ -9,7 +9,13 @@
     color: inherit;
 }
 
+.home-menu-items li a:hover .fas {
+    visibility: visible;
+}
+
 .fa-hand-point-right, 
 .fa-hand-point-left {
+    visibility: hidden;
+    margin: 0px 15px;
 }
 

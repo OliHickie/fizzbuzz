@@ -12,7 +12,8 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4 {
+h1 {
+    font-size: 72px;
     font-family: 'Train One', cursive;
     background: -webkit-linear-gradient(#FA9F42, #721817);
     -webkit-background-clip: text;
@@ -20,18 +21,19 @@ h1, h2, h3, h4 {
     -webkit-text-fill-color: transparent;
 }
 
-h1  {
-    font-size: 72px;
-}
-
 h2 {
-    font-size: 48px;
+    font-size: 40px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 @media screen and (max-width: 600px) {
     h1 {
         font-size: 48px;
     }
+}
+
+.color-orange {
+    color: #FA9F42;
 }
 
 /* Header  */
